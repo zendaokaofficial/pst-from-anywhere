@@ -1,0 +1,33 @@
+// schema.prisma
+datasource db {
+  provider = "mongodb" // Change to your database provider
+  url      = env("DATABASE_URL") // Add your database URL in an .env file
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Feedback {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  nama       String
+  email      String
+  whatsapp   String
+  keperluan  Keperluan
+  tanggal    DateTime
+  waktu      String
+  createdAt  DateTime @default(now())
+}
+
+model Suggestion {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  email      String
+  message    String
+  createdAt  DateTime @default(now())
+}
+ 
+enum Keperluan {
+  Umum
+  PST
+}
