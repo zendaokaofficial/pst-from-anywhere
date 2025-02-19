@@ -3,8 +3,8 @@ import React from 'react';
 const StatsSection = () => {
   const stats = [
     {
-      title: "Jumlah Penduduk 2023",
-      value: "471,3 juta"
+      title: "Jumlah Penduduk 2024",
+      value: "467,67 ribu"
     },
     {
       title: "Laju Pertumbuhan Penduduk 2023",
