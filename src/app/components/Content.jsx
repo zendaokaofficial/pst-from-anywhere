@@ -3,7 +3,7 @@ import React from 'react';
 const StatsSection = () => {
   const stats = [
     {
-      title: "Jumlah Penduduk 2024",
+      title: "Proyeksi Jumlah Penduduk 2024",
       value: "467,67 ribu"
     },
     {
@@ -23,7 +23,7 @@ const StatsSection = () => {
       value: "1,85%"
     },
     {
-      title: "Penduduk Miskin 2024",
+      title: "Jumlah Penduduk Miskin 2024",
       value: "20,16 ribu"
     },
     {
@@ -47,7 +47,7 @@ const StatsSection = () => {
       value: "3,56%"
     },
      {
-      title: "Inflasi 2024",
+      title: "Inflasi Tahunan 2024",
       value: "2,44%"
     },
   ];
