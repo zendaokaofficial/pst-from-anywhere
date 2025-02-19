@@ -38,6 +38,10 @@ const StatsSection = () => {
       title: "Laju Pertumbuhan Ekonomi 2023",
       value: "3,56%"
     },
+    {
+      title: "Jumlah Penduduk 2023",
+      value: "471,3 juta"
+    },
   ];
 
   return (
