@@ -11,24 +11,24 @@ const StatsSection = () => {
       value: "0,90%"
     },
     {
-      title: "Angka Melek Huruf Usia 15+",
+      title: "Angka Melek Huruf Usia 15+ 2023",
       value: "95,61%"
     },
     {
-      title: "TPAK 2023",
-      value: "76,16%"
+      title: "TPAK 2024",
+      value: "75,29%"
     },
     {
-      title: "Penduduk Miskin 2023",
-      value: "21,42 juta"
+      title: "Penduduk Miskin 2024",
+      value: "20,16 ribu"
     },
     {
-      title: "Persentase Penduduk Miskin 2023",
-      value: "4,70%"
+      title: "Persentase Penduduk Miskin 2024",
+      value: "4,40%"
     },
     {
-      title: "IPM 2023",
-      value: "77,87"
+      title: "IPM 2024",
+      value: "78,83"
     },
     {
       title: "PDRB Harga Berlaku 2023",
