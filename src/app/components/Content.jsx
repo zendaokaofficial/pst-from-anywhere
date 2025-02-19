@@ -42,6 +42,10 @@ const StatsSection = () => {
       title: "Laju Pertumbuhan Ekonomi 2023",
       value: "3,56%"
     },
+     {
+      title: "Inflasi 2024",
+      value: "2,44%"
+    },
   ];
 
   return (
