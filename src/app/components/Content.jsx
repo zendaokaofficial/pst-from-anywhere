@@ -27,6 +27,10 @@ const StatsSection = () => {
       value: "4,40%"
     },
     {
+      title: "Gini Ratio 2024",
+      value: "0,301"
+    },
+    {
       title: "IPM 2024",
       value: "78,83"
     },
