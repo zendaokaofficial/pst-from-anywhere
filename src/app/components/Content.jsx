@@ -7,8 +7,8 @@ const StatsSection = () => {
       value: "467,67 ribu"
     },
     {
-      title: "Laju Pertumbuhan Penduduk 2023",
-      value: "1,08%"
+      title: "Laju Pertumbuhan Penduduk 2024",
+      value: "0,90%"
     },
     {
       title: "Angka Melek Huruf Usia 15+",
