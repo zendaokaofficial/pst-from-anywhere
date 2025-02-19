@@ -15,8 +15,12 @@ const StatsSection = () => {
       value: "95,61%"
     },
     {
-      title: "TPAK 2024",
+      title: "Tingkat Partisipasi Angkatan Kerja 2024",
       value: "75,29%"
+    },
+     {
+      title: "Tingkat Pengangguran Terbuka 2024",
+      value: "1,85%"
     },
     {
       title: "Penduduk Miskin 2024",
