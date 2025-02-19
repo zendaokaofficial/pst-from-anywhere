@@ -35,7 +35,7 @@ const StatsSection = () => {
       value: "0,301"
     },
     {
-      title: "IPM 2024",
+      title: "Indeks Pembangunan Manusia 2024",
       value: "78,83"
     },
     {
