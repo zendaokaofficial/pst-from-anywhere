@@ -8,7 +8,7 @@ export async function POST(req) {
     const client = new google.auth.JWT(
       keys.client_email,
       null,
-      keys.private_key,
+      privateKey,
       ['https://www.googleapis.com/auth/spreadsheets']
     );
 
