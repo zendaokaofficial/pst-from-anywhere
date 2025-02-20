@@ -3,7 +3,8 @@ import keys from '../../../../key.json';
 
 export async function POST(req) {
   try {
-    const privateKey = keys.private_key.replace(/\\n/g, '\n'); // Perbaiki format private_key
+    const privateKey = keys.private_key.split('\\n').join('\n');
+ // Perbaiki format private_key
 
     const client = new google.auth.JWT(
       keys.client_email,
