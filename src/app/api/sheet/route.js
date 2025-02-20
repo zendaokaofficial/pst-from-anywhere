@@ -1,48 +1,55 @@
 import { google } from 'googleapis';
-import keys from '../../../../key.json';
+import keys from '../../../../key.json'; // Pastikan path ini sesuai
 
 export async function POST(req) {
   try {
-    const privateKey = keys.private_key.split('\\n').join('\n'); // Pastikan format private_key benar
-
     const client = new google.auth.JWT(
       keys.client_email,
       null,
-      privateKey,
+      keys.private_key,
       ['https://www.googleapis.com/auth/spreadsheets']
     );
 
     await client.authorize();
-    console.log("Google Sheets API: Autentikasi berhasil");
 
     const gsapi = google.sheets({ version: 'v4', auth: client });
 
-    const { formType, nama, email, whatsapp, keperluan, tanggal, waktu, message } = await req.json();
-    
-    console.log('Data diterima di backend:', { formType, nama, email, whatsapp, keperluan, tanggal, waktu, message });
+    // Ambil data dari body request
+    const { formType, name, nama, email, whatsapp, keperluan, tanggal, waktu, message } = await req.json();
 
     let opt;
+
+    // Cek jenis form dan tentukan range penyimpanan
     if (formType === 'KritikSaran') {
       opt = {
-        spreadsheetId: '1_CiaVmc_DhtsqYqrCsm5gjrWTE2C8UF9reP89OLXQtM',
+        spreadsheetId: '1qsqL---Yco6g7O_f144YCZB-GqXDpmRo2Fs-jj4V_Dc',
         range: 'KritikSaran!A2:C',
         valueInputOption: 'USER_ENTERED',
-        resource: { values: [[nama, email, message]] },
+        resource: {
+            values: [[name, email, message]],
+        },
       };
     } else if (formType === 'BukuTamu') {
       opt = {
-        spreadsheetId: '1_CiaVmc_DhtsqYqrCsm5gjrWTE2C8UF9reP89OLXQtM',
+        spreadsheetId: '1qsqL---Yco6g7O_f144YCZB-GqXDpmRo2Fs-jj4V_Dc',
         range: 'DataPengunjung!A2:F',
         valueInputOption: 'USER_ENTERED',
-        resource: { values: [[nama, email, whatsapp, keperluan, tanggal, waktu]] },
+        resource: {
+          values: [[nama, email, whatsapp, keperluan, tanggal, waktu]], // Data untuk Buku Tamu
+        },
       };
     }
 
     await gsapi.spreadsheets.values.append(opt);
-    return new Response(JSON.stringify({ error: false, message: 'Data berhasil ditambahkan!' }), { status: 200 });
 
+    return new Response(JSON.stringify({ error: false, message: 'Data berhasil ditambahkan!' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (e) {
-    console.error('Error di backend:', e);
-    return new Response(JSON.stringify({ error: true, message: e.message }), { status: 400 });
+    return new Response(JSON.stringify({ error: true, message: e.message }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
