@@ -5,11 +5,12 @@ export async function POST(req) {
   try {
     const privateKey = keys.private_key.split('\\n').join('\n'); // Pastikan format private_key benar
 
-    const client = new google.auth.JWT({
-      email: keys.client_email,
-      key: privateKey,
-      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-    });
+    const client = new google.auth.JWT(
+      keys.client_email,
+      null,
+      privateKey,
+      ['https://www.googleapis.com/auth/spreadsheets']
+    );
 
     await client.authorize();
     console.log("Google Sheets API: Autentikasi berhasil");
